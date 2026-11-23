@@ -2,7 +2,7 @@
 
 Site da **FisioHand**, marca da fisioterapeuta Suel Vilar (Olinda e Recife), publicado no GitHub Pages.
 
-Endereço: https://marco-fontes.github.io/SiteSuel/
+Endereço: https://www.fisiohand.com.br/ (domínio próprio, arquivo `CNAME`)
 
 ## Estrutura
 
@@ -36,4 +36,12 @@ Os tokens em `css/site.css` (`:root` e os temas `[data-theme="escuro"]` e `[data
 
 ## Domínio próprio
 
-Para usar um domínio (ex.: `fisiohand.com.br`), crie um arquivo `CNAME` com o domínio, configure o DNS conforme a documentação do GitHub Pages e atualize as URLs absolutas em `index.html` (canonical, `og:url`, `og:image` e o JSON-LD), `404.html` (prefixo `/SiteSuel/`), `robots.txt` e `sitemap.xml`.
+O site responde em `www.fisiohand.com.br` (arquivo `CNAME`). O DNS fica no Registro.br (servidores `a.auto.dns.br` e `b.auto.dns.br`), com estes registros:
+
+| Nome | Tipo | Valor |
+|---|---|---|
+| `www` | CNAME | `marco-fontes.github.io` |
+| (vazio, raiz) | A | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| (vazio, raiz) | AAAA | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+
+Com os registros da raiz, o GitHub redireciona `fisiohand.com.br` para `www.fisiohand.com.br`. Depois que o DNS propagar, marque "Enforce HTTPS" em Settings → Pages.
