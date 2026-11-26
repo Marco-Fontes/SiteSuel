@@ -71,9 +71,18 @@ a { color: inherit; }
 [hidden] { display: none !important; }
 
 /* Foco visível: brand-text é legível nos três temas */
-a:focus-visible, summary:focus-visible, .reel:focus-visible {
+a:focus-visible, summary:focus-visible, button:focus-visible, .reel:focus-visible {
   outline: 2px solid var(--brand-text); outline-offset: 3px; border-radius: var(--radius-md);
 }
+
+/* Link "pular para o conteúdo": invisível até receber foco pelo teclado */
+.pular {
+  position: absolute; left: var(--space-4); top: -100px; z-index: 100;
+  background: var(--brand); color: var(--on-brand); font-weight: 800; font-size: 15px;
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); text-decoration: none;
+}
+.pular:focus { top: var(--space-4); }
+main:focus { outline: none; }
 
 /* ===== Estrutura ===== */
 .secao { background: var(--surface-100); color: var(--ink); }
@@ -113,12 +122,6 @@ a:focus-visible, summary:focus-visible, .reel:focus-visible {
 
 .lead { font-size: clamp(18px, 2.1vw, 21px); line-height: 1.5; font-weight: 500; max-width: 46ch; }
 .par { font-size: 16px; line-height: 1.65; color: var(--ink-muted); max-width: 60ch; }
-
-.marca-agua {
-  font-size: 14px; line-height: 1.5; font-weight: 600; color: var(--brand-text);
-  border-top: 1px dashed var(--border); padding-top: var(--space-3); margin-top: var(--space-6);
-  max-width: 60ch;
-}
 
 /* Botões */
 .btn {
@@ -174,7 +177,25 @@ a:focus-visible, summary:focus-visible, .reel:focus-visible {
 .nav-links a:hover { color: #fff; }
 .nav .btn { min-height: 44px; padding: var(--space-2) var(--space-4); gap: var(--space-3); }
 
-@media (max-width: 900px) { .nav-links { display: none; } }
+/* Menu do celular: o botão só aparece quando o JS está ativo (atributo hidden removido em site.js) */
+.nav-menu {
+  display: none; align-items: center; gap: var(--space-2);
+  min-height: 44px; padding: var(--space-2) var(--space-3);
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.24); border-radius: var(--radius-lg);
+  font: 700 14px/1 var(--font-body); cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-menu:not([hidden]) { display: inline-flex; margin-left: auto; }
+  .nav.aberta .nav-links {
+    display: flex; flex-direction: column; gap: 0;
+    position: absolute; left: 0; right: 0; top: 100%;
+    background: #1c150d; border-bottom: 1px solid rgba(255,255,255,0.14);
+    padding: var(--space-2) var(--space-6) var(--space-4);
+  }
+  .nav.aberta .nav-links a { display: block; padding: var(--space-4) 0; font-size: 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+}
 @media (max-width: 719px) { .nav .btn { display: none; } }
 
 /* ===== Herói: fotos de atendimento ao fundo, véu por cima, conteúdo acima de tudo ===== */
@@ -231,7 +252,7 @@ a:focus-visible, summary:focus-visible, .reel:focus-visible {
 }
 @media (min-width: 900px) { .heroi-marca img { width: 268px; } }
 
-/* No herói sobrou um botão só: ele acompanha o próprio texto, não estica */
+/* No herói os botões acompanham o próprio texto, não esticam */
 .heroi .btn-linha .btn { flex: 0 1 auto; }
 
 .heroi .lead { margin-top: var(--space-6); color: var(--ink-muted); }
@@ -396,7 +417,7 @@ a:focus-visible, summary:focus-visible, .reel:focus-visible {
   display: flex; align-items: center; justify-content: center; flex: none;
 }
 
-.contato-linha a, .contato-linha span.txt { text-decoration: none; font-weight: 600; font-size: 16px; }
+.contato-linha a, .contato-txt { text-decoration: none; font-weight: 600; font-size: 16px; }
 .contato-linha a:hover { color: var(--brand-text); }
 
 .rodape-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-12); }

@@ -27,7 +27,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
 <script src="js/site.js" defer></script>
 
@@ -43,11 +43,20 @@
   "telephone": "+55 81 98610-2943",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Edifício Empresarial Brasil Norte",
+    "streetAddress": "Rua Gervásio Pires, 234, Sala 804, Edifício Empresarial Brasil Norte, Boa Vista",
     "addressLocality": "Recife",
     "addressRegion": "PE",
+    "postalCode": "50060-090",
     "addressCountry": "BR"
   },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "19:00"
+    }
+  ],
   "areaServed": [
     {
       "@type": "City",
@@ -66,18 +75,24 @@
 </head>
 <body>
 
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
 <!-- Ícone de conversa genérico. Para usar o ícone oficial do WhatsApp, baixe-o do kit de marca do WhatsApp e substitua os <svg> com a classe "ico-wpp". -->
 
 <nav class="nav" aria-label="Navegação principal">
   <div class="nav-inner">
     <a class="nav-marca" href="#topo">
-      <img src="assets/img/selo-160.png" width="160" height="160" alt="" />
+      <img src="assets/img/selo-112.png" width="112" height="112" alt="" />
       <span>
         <b>FisioHand</b>
         <small>Suel Vilar · Fisioterapeuta</small>
       </span>
     </a>
-    <ul class="nav-links">
+    <button class="nav-menu" type="button" aria-expanded="false" aria-controls="nav-links" hidden>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <span>Menu</span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#ajuda">Como posso ajudar</a></li>
       <li><a href="#como-funciona">Como funciona</a></li>
       <li><a href="#sobre">Sobre</a></li>
@@ -95,6 +110,8 @@
   <span>WhatsApp</span>
 </a>
 
+<main id="conteudo" tabindex="-1">
+
 <!-- 1. HERÓI -->
 <header id="topo" class="secao heroi" data-theme="escuro">
   <div class="heroi-fundo" aria-hidden="true">
@@ -109,6 +126,10 @@
         <h1 class="h-xl">O que você deixou de fazer por causa da dor?</h1>
         <p class="lead">Sou Suel Vilar. Atendo na sua casa, no consultório ou online, com um plano construído para a sua rotina, não um protocolo pronto.</p>
         <div class="btn-linha">
+          <a class="btn" href="https://wa.me/5581986102943?text=Ol%C3%A1%2C%20Suel%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+            <span>Agendar pelo WhatsApp</span>
+            <svg class="ico-wpp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/><line x1="8.5" y1="10" x2="15.5" y2="10"/><line x1="8.5" y1="13.5" x2="13" y2="13.5"/></svg>
+          </a>
           <a class="btn btn--contorno" href="#ajuda">
             <span>Ver como posso ajudar</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></svg>
@@ -116,6 +137,7 @@
         </div>
         <div class="heroi-regua">
           <div>Atendimento em Olinda e Recife</div>
+          <div>Segunda a sexta, 7h às 19h</div>
           <div>Sessões de 50 a 60 min</div>
           <div>Crefito 393104-F</div>
         </div>
@@ -230,7 +252,7 @@
     <div class="tags">
       <span class="tag">Liberação miofascial</span>
       <span class="tag">Quiropraxia</span>
-      <span class="tag">Agulhamento à seco</span>
+      <span class="tag">Agulhamento a seco</span>
       <span class="tag">Terapia manual</span>
       <span class="tag">Cinesioterapia</span>
       <span class="tag">Recovery</span>
@@ -252,7 +274,7 @@
           <p class="local-meta">Consultório · Boa Vista, Recife</p>
           <p class="h-md">Um espaço preparado.</p>
           <p class="par">Ambiente preparado para avaliação, tratamento e reabilitação.</p>
-          <p class="local-endereco">Edifício Empresarial Brasil Norte<br>Boa Vista, Recife, PE</p>
+          <p class="local-endereco">Edifício Empresarial Brasil Norte, Sala 804<br>Rua Gervásio Pires, 234, Boa Vista<br>Recife, PE, 50060-090</p>
           <a class="btn btn--bloco btn--contorno" href="https://wa.me/5581986102943?text=Ol%C3%A1%2C%20Suel%21%20Vim%20pelo%20site%20e%20quero%20agendar%20no%20consult%C3%B3rio.%20Quais%20hor%C3%A1rios%20voc%C3%AA%20tem%20dispon%C3%ADveis%3F" target="_blank" rel="noopener">
             <span>Agendar no consultório</span>
             <svg class="ico-wpp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/><line x1="8.5" y1="10" x2="15.5" y2="10"/><line x1="8.5" y1="13.5" x2="13" y2="13.5"/></svg>
@@ -277,7 +299,7 @@
       <div class="reels">
         <a class="reel" href="https://www.instagram.com/reel/DetmWeBpkmp/" target="_blank" rel="noopener" aria-label="Vídeo completo no Instagram: não é mágica, é fisioterapia">
           <span class="reel-video">
-            <video src="assets/video/reel1.mp4" poster="assets/video/reel1.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+            <video src="assets/video/reel1.mp4" poster="assets/video/reel1.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
             <span class="reel-selo">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12.5" r="4"/><line x1="16.5" y1="8.2" x2="16.6" y2="8.2"/></svg>
             </span>
@@ -285,7 +307,7 @@
         </a>
         <a class="reel" href="https://www.instagram.com/reel/Deo_K20xt-z/" target="_blank" rel="noopener" aria-label="Vídeo completo no Instagram: menos tensão, mais leveza">
           <span class="reel-video">
-            <video src="assets/video/reel2.mp4" poster="assets/video/reel2.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+            <video src="assets/video/reel2.mp4" poster="assets/video/reel2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
             <span class="reel-selo">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12.5" r="4"/><line x1="16.5" y1="8.2" x2="16.6" y2="8.2"/></svg>
             </span>
@@ -293,7 +315,7 @@
         </a>
         <a class="reel" href="https://www.instagram.com/reel/DeRxOqmJ3QB/" target="_blank" rel="noopener" aria-label="Vídeo completo no Instagram: quanta dor o seu estou bem tem guardado">
           <span class="reel-video">
-            <video src="assets/video/reel3.mp4" poster="assets/video/reel3.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+            <video src="assets/video/reel3.mp4" poster="assets/video/reel3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
             <span class="reel-selo">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12.5" r="4"/><line x1="16.5" y1="8.2" x2="16.6" y2="8.2"/></svg>
             </span>
@@ -425,13 +447,15 @@
   </div>
 </section>
 
+</main>
+
 <!-- 8. RODAPÉ -->
 <footer id="contato" class="secao" data-theme="escuro">
   <div class="wrap" style="padding-bottom: var(--space-24);">
     <div class="rodape-grid">
       <div>
         <div class="nav-marca" style="margin-bottom: var(--space-6);">
-          <img src="assets/img/selo-160.png" width="160" height="160" alt="Selo FisioHand" style="width:52px;height:52px;" />
+          <img src="assets/img/selo-112.png" width="112" height="112" alt="Selo FisioHand" style="width:52px;height:52px;" />
           <span>
             <b style="font-size:20px;">FisioHand</b>
             <small style="color: var(--ink-muted);">Suel Vilar · Fisioterapeuta · Crefito 393104-F</small>
@@ -451,7 +475,11 @@
         </div>
         <div class="contato-linha">
           <span class="contato-icone"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Edif%C3%ADcio%20Empresarial%20Brasil%20Norte%2C%20Boa%20Vista%2C%20Recife%20-%20PE" target="_blank" rel="noopener">Consultório: Edifício Empresarial Brasil Norte, Boa Vista, Recife, PE</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Gerv%C3%A1sio%20Pires%2C%20234%2C%20Boa%20Vista%2C%20Recife%20-%20PE%2C%2050060-090" target="_blank" rel="noopener">Consultório: Edifício Empresarial Brasil Norte, Sala 804<br>Rua Gervásio Pires, 234, Boa Vista, Recife, PE</a>
+        </div>
+        <div class="contato-linha">
+          <span class="contato-icone"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><polyline points="12 7.5 12 12 15 14"/></svg></span>
+          <span class="contato-txt">Segunda a sexta, 7h às 19h</span>
         </div>
       </div>
     </div>

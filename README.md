@@ -10,7 +10,7 @@ Endereço: https://www.fisiohand.com.br/ (domínio próprio, arquivo `CNAME`)
 index.html            página única (todas as seções)
 404.html              página de erro
 css/site.css          estilos e tokens do design system FisioHand
-js/site.js            pausa os vídeos para quem pede menos animação no sistema
+js/site.js            menu do celular; vídeos tocam só quando aparecem na tela
 assets/img/           selo, wordmark, foto do herói, ícones e imagem de compartilhamento
 assets/video/         trechos dos reels do Instagram (mp4 + pôster)
 robots.txt, sitemap.xml, .nojekyll
