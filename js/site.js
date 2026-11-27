@@ -26,6 +26,21 @@
     });
   }
 
+  /* Botão flutuante do WhatsApp: some enquanto o botão de agendar do topo
+     ou o da chamada final estão na tela, para não aparecerem dois juntos. */
+  var fixo = document.querySelector('.btn-fixo');
+  var alvos = document.querySelectorAll('.heroi .btn-linha, #agendar');
+  if (fixo && alvos.length && 'IntersectionObserver' in window) {
+    var visiveis = new Set();
+    var observadorFixo = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (en.isIntersecting) visiveis.add(en.target); else visiveis.delete(en.target);
+      });
+      fixo.classList.toggle('escondido', visiveis.size > 0);
+    });
+    alvos.forEach(function (el) { observadorFixo.observe(el); });
+  }
+
   /* Vídeos dos reels: só baixam e tocam quando aparecem na tela.
      Quem pede menos animação no sistema vê apenas a imagem de capa. */
   var videos = document.querySelectorAll('.reel video');

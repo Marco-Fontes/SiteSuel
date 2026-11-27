@@ -150,7 +150,11 @@ main:focus { outline: none; }
   bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
   z-index: 60; gap: var(--space-3); padding: var(--space-3) var(--space-6);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 }
+
+/* Escondido enquanto outro botão de agendar já está na tela (controlado em site.js) */
+.btn-fixo.escondido { opacity: 0; visibility: hidden; transform: translateY(16px); pointer-events: none; }
 
 @media (min-width: 720px) { .btn-fixo { display: none; } }
 
@@ -243,14 +247,6 @@ main:focus { outline: none; }
 }
 
 .heroi-conteudo { max-width: 680px; }
-
-/* Marca horizontal sobre a foto: o arquivo já vem sem fundo, a sombra firma o traço */
-.heroi-marca { margin-bottom: var(--space-6); }
-.heroi-marca img {
-  width: 212px; max-width: 70%;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55));
-}
-@media (min-width: 900px) { .heroi-marca img { width: 268px; } }
 
 /* No herói os botões acompanham o próprio texto, não esticam */
 .heroi .btn-linha .btn { flex: 0 1 auto; }
@@ -435,4 +431,5 @@ main:focus { outline: none; }
   html { scroll-behavior: auto; }
   .btn:hover, .cartao:hover, .local:hover, .reel:hover { transform: none; }
   .faq summary::after { transition: none; }
+  .btn-fixo { transition: none; }
 }
