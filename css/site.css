@@ -244,14 +244,6 @@ main:focus { outline: none; }
 
 .heroi-conteudo { max-width: 680px; }
 
-/* Marca horizontal sobre a foto: o arquivo já vem sem fundo, a sombra firma o traço */
-.heroi-marca { margin-bottom: var(--space-6); }
-.heroi-marca img {
-  width: 212px; max-width: 70%;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55));
-}
-@media (min-width: 900px) { .heroi-marca img { width: 268px; } }
-
 /* No herói os botões acompanham o próprio texto, não esticam */
 .heroi .btn-linha .btn { flex: 0 1 auto; }
 
